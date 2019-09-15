@@ -1,6 +1,5 @@
 package com.walmart.gls.rd.entity;
 
-import java.io.Serializable;
 import java.time.Instant;
 
 import javax.validation.constraints.NotNull;
@@ -31,21 +30,21 @@ public class AppModuleVersion  implements IAuditDate,ICompositeKey {
 	
 	public AppModuleVersion() {
 	}
-	public void setArtifactId(String artifactId) {
-		this.artifactId = artifactId;
-	}
 	public String getVersion() {
 		return version;
 	}
 	public void setVersion(String version) {
 		this.version = version;
-	}
-	
+	}	
 	public String getId() {
 		return id;
 	}
-	
-	
+	public String getArtifactId() {
+		return artifactId;
+	}
+	public void setArtifactId(String artifactId) {
+		this.artifactId = artifactId;
+	}
 	public Instant getCreatedDate() {
 		return createdDate;
 	}
@@ -84,9 +83,6 @@ public class AppModuleVersion  implements IAuditDate,ICompositeKey {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	public String getArtifactId() {
-		return artifactId;
 	}
 	
 	public String generateCompositeKey() {

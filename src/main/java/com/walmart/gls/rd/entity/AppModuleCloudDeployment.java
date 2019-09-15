@@ -31,6 +31,8 @@ public class AppModuleCloudDeployment  implements IAuditDate,ICompositeKey {
 
 	@LastModifiedDate
 	private Instant lastModifiedDate;
+	@NotNull
+	private Boolean activeVersion;
 	
 	public AppModuleCloudDeployment() {
 	}
@@ -83,6 +85,13 @@ public class AppModuleCloudDeployment  implements IAuditDate,ICompositeKey {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+	
+	public Boolean getActiveVersion() {
+		return activeVersion;
+	}
+	public void setActiveVersion(Boolean activeVersion) {
+		this.activeVersion = activeVersion;
 	}
 	@Override
 	public boolean equals(Object obj) {

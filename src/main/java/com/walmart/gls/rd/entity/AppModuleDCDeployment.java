@@ -25,8 +25,12 @@ public class AppModuleDCDeployment  implements IAuditDate, ICompositeKey {
 	private String dc;
 	@NotNull
 	private String countryCode;
+	
 	@NotNull
-	private String version;	
+	private String version;
+	
+	@NotNull
+	private Boolean activeVersion;
 
 	@CreatedDate
 	private Instant createdDate;
@@ -95,6 +99,13 @@ public class AppModuleDCDeployment  implements IAuditDate, ICompositeKey {
 	
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public Boolean getActiveVersion() {
+		return activeVersion;
+	}
+	public void setActiveVersion(Boolean activeVersion) {
+		this.activeVersion = activeVersion;
 	}
 	@Override
 	public int hashCode() {
